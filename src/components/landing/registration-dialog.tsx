@@ -96,7 +96,7 @@ export default function RegistrationDialog({ children }: RegistrationDialogProps
               </div>
               <div className="space-y-2">
                 <Label htmlFor="whatsapp">WhatsApp Number</Label>
-                <Input id="whatsapp" name="whatsapp" type="tel" placeholder="e.g., 60123456789" required />
+                <Input id="whatsapp" name="whatsapp" type="tel" placeholder="e.g., +60123456789" defaultValue="+60" required />
                 {state.errors?.whatsapp && <p className="text-sm text-red-500 flex items-center gap-1"><AlertCircle size={14} />{state.errors.whatsapp[0]}</p>}
               </div>
               <DialogFooter>

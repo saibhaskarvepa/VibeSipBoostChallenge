@@ -5,7 +5,7 @@ import { z } from 'zod';
 const registrationSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
   email: z.string().email('Please enter a valid email address.'),
-  whatsapp: z.string().min(10, 'Please enter a valid WhatsApp number.'),
+  whatsapp: z.string().min(10, 'Please enter a valid WhatsApp number. It should start with +60.').startsWith('+60', 'WhatsApp number must start with +60'),
 });
 
 export type RegistrationState = {
