@@ -6,8 +6,12 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section id="home" className="w-full py-20 md:py-32 lg:py-40 bg-background">
-      <div className="container px-4 md:px-6">
+    <section id="home" className="relative w-full overflow-hidden py-20 md:py-32 lg:py-40 bg-background">
+      <div className="absolute inset-0 z-0 opacity-20">
+        <div className="absolute top-1/4 left-0 w-full h-24 bg-primary/40 rounded-full animate-flow-right-to-left animation-delay-none" />
+        <div className="absolute top-1/2 left-0 w-full h-32 bg-accent/40 rounded-full animate-flow-left-to-right animation-delay-2000" />
+      </div>
+      <div className="container px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center space-y-8 text-center">
           <Image
             src="/images/drink.png"
