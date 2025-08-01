@@ -36,11 +36,8 @@ export async function registerForChallenge(
       success: false,
     };
   }
-
-  // Here you would typically handle payment processing,
-  // save the user to a database, and send a confirmation email.
-  // For this demonstration, we will just log the data and simulate success.
-  console.log('New Challenge Registration:', validatedFields.data);
+  
+  const { name, email, whatsapp } = validatedFields.data;
 
   // Send email notification
   if (process.env.RESEND_API_KEY) {
@@ -54,9 +51,9 @@ export async function registerForChallenge(
           <h1>New Registration!</h1>
           <p>A new user has registered for the VSB Challenge.</p>
           <ul>
-            <li><strong>Name:</strong> ${validatedFields.data.name}</li>
-            <li><strong>Email:</strong> ${validatedFields.data.email}</li>
-            <li><strong>WhatsApp:</strong> ${validatedFields.data.whatsapp}</li>
+            <li><strong>Name:</strong> ${name}</li>
+            <li><strong>Email:</strong> ${email}</li>
+            <li><strong>WhatsApp:</strong> ${whatsapp}</li>
           </ul>
         `,
       });
