@@ -84,3 +84,32 @@ export async function registerForChallenge(
     success: true,
   };
 }
+
+export async function sendTestEmail() {
+  if (!process.env.RESEND_API_KEY) {
+    console.error('RESEND_API_KEY is not set. Cannot send test email.');
+    return { success: false, message: 'RESEND_API_KEY is not set.' };
+  }
+  
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
+  try {
+    const { data, error } = await resend.emails.send({
+      from: 'Test <onboarding@resend.dev>',
+      to: ['saibhaskar.as400@gmail.com'],
+      subject: 'Resend Test Email',
+      html: '<h1>This is a test email</h1><p>If you received this, Resend is working correctly!</p>',
+    });
+
+    if (error) {
+      console.error('Test Email Resend API Error:', error);
+      return { success: false, message: `Failed to send test email: ${error.message}` };
+    }
+
+    console.log('Test email sent successfully:', data);
+    return { success: true, message: 'Test email sent successfully!' };
+  } catch (error) {
+    console.error('Failed to send test email:', error);
+    return { success: false, message: 'An unexpected error occurred while sending the test email.' };
+  }
+}

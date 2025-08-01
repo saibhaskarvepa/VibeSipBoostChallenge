@@ -1,7 +1,11 @@
+'use client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
-import { Mail, Phone } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Mail, Phone, Send } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { sendTestEmail } from '@/app/actions';
 
 const mockRegistrations = [
   { name: 'Aisha Khan', email: 'aisha.k@example.com', whatsapp: '+60123456789', status: 'Registered' },
@@ -11,11 +15,28 @@ const mockRegistrations = [
 ];
 
 export default function AdminDashboard() {
+  const { toast } = useToast();
+
+  const handleTestEmail = async () => {
+    const result = await sendTestEmail();
+    toast({
+      title: result.success ? 'Success!' : 'Error',
+      description: result.message,
+      variant: result.success ? 'default' : 'destructive',
+    });
+  };
+
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-headline">Admin Dashboard</h1>
-        <p className="text-muted-foreground">Welcome back! Here's an overview of your challenge.</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-headline">Admin Dashboard</h1>
+          <p className="text-muted-foreground">Welcome back! Here's an overview of your challenge.</p>
+        </div>
+        <Button onClick={handleTestEmail}>
+          <Send className="mr-2 h-4 w-4" />
+          Send Test Email
+        </Button>
       </div>
 
       <Card className="shadow-lg">
