@@ -31,7 +31,7 @@ export function PersonalizeForm() {
     defaultValues: {
       userName: 'Alex Doe',
       challengeName: 'VSB Challenge',
-      challengeStartDate: 'August 15th, 2024',
+      challengeStartDate: 'August 8th, 2025',
       userProgress: 'Day 3 of 7',
       motivationalMessage: 'Keep going, you are doing great!',
     },

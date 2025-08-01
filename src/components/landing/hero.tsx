@@ -19,7 +19,7 @@ export default function Hero() {
       <div className="container relative z-10 px-4 md:px-6 text-center">
         <div className="max-w-3xl mx-auto space-y-6">
           <Badge variant="outline" className="py-2 px-4 rounded-full border-primary/50 text-primary font-medium">
-            Starts on August 15th, 2024
+            Starts on August 8th, 2025
           </Badge>
           <h1 className="text-4xl font-headline tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-foreground">
             Revitalize Your Vibe with the Vibe Sip Boost Challenge
