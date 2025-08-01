@@ -16,7 +16,7 @@ export default function Cta() {
                 Join the Challenge
               </Button>
             </RegistrationDialog>
-            <p className="text-xs text-muted-foreground">Limited spots available. Register now to avoid disappointment.</p>
+            <p className="text-xs text-muted-foreground">Limited spots available for Malaysian residents. Register now!</p>
           </div>
         </div>
       </div>

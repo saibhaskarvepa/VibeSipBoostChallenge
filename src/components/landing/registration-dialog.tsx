@@ -17,7 +17,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { registerForChallenge, type RegistrationState } from '@/app/actions';
 import { useToast } from '@/hooks/use-toast';
-import { CheckCircle, Download, Link as LinkIcon, AlertCircle } from 'lucide-react';
+import { CheckCircle, Info, AlertCircle } from 'lucide-react';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 interface RegistrationDialogProps {
   children: React.ReactNode;
@@ -62,7 +63,7 @@ export default function RegistrationDialog({ children }: RegistrationDialogProps
           <div className="flex flex-col items-center text-center p-8">
             <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
             <h2 className="text-2xl font-headline mb-2">Registration Successful!</h2>
-            <p className="text-muted-foreground mb-6">Welcome to the VSB Challenge! Check your email for the next steps.</p>
+            <p className="text-muted-foreground mb-6">Welcome to the VSB Challenge! Please check your email for the instruction manual, video links, and next steps.</p>
              <DialogFooter className="mt-6">
                 <Button variant="outline" onClick={resetAndClose}>Close</Button>
             </DialogFooter>
@@ -75,6 +76,13 @@ export default function RegistrationDialog({ children }: RegistrationDialogProps
                 Fill in your details below to secure your spot.
               </DialogDescription>
             </DialogHeader>
+            <Alert className="mt-4">
+              <Info className="h-4 w-4" />
+              <AlertTitle>Heads Up!</AlertTitle>
+              <AlertDescription>
+                This challenge is currently only available for residents of Malaysia.
+              </AlertDescription>
+            </Alert>
             <form key={formKey} action={dispatch} className="space-y-4 py-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Full Name</Label>
