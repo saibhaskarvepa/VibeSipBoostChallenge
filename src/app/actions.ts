@@ -39,11 +39,12 @@ export async function registerForChallenge(
   
   const { name, email, whatsapp } = validatedFields.data;
 
-  // Send email notification
   if (process.env.RESEND_API_KEY) {
     const resend = new Resend(process.env.RESEND_API_KEY);
+    
     try {
-      const { data, error } = await resend.emails.send({
+      // Send admin notification
+      await resend.emails.send({
         from: 'VSB Challenge <onboarding@resend.dev>',
         to: ['saibhaskar.as400@gmail.com'],
         subject: 'New VSB Challenge Registration!',
@@ -58,25 +59,33 @@ export async function registerForChallenge(
         `,
       });
 
-      if (error) {
-        console.error('Resend API Error:', error);
-        return {
-          message: 'Registration successful, but failed to send notification email due to a Resend API error.',
-          success: true,
-        };
-      }
+      // Send user confirmation email
+      await resend.emails.send({
+        from: 'VSB Challenge <onboarding@resend.dev>',
+        to: [email],
+        subject: 'Welcome to the VSB Challenge!',
+        html: `
+          <h1>Welcome, ${name}!</h1>
+          <p>Thank you for registering for the VSB Challenge. We are so excited to have you on board!</p>
+          <p>You'll receive another email soon with the instruction manual, video links, and next steps to prepare for the challenge.</p>
+          <p>Get ready to revitalize your body and mind!</p>
+          <br/>
+          <p>Best regards,</p>
+          <p>The VSB Challenge Team</p>
+        `,
+      });
 
     } catch (error) {
       console.error('Failed to send registration email:', error);
-      // We don't want to block the user registration if the email fails.
-      // You might want to add more robust error handling or logging here.
+      // We don't want to block the user registration if the email fails,
+      // but we return a message indicating the email part failed.
       return {
-        message: 'Registration successful, but failed to send notification email.',
-        success: true,
+        message: 'Registration successful, but we failed to send the confirmation email. Please contact support.',
+        success: true, // The user is registered, but we need to flag the email issue.
       }
     }
   } else {
-    console.warn('RESEND_API_KEY is not set. Skipping email notification.');
+    console.warn('RESEND_API_KEY is not set. Skipping email notifications.');
   }
 
   return {
