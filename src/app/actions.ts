@@ -43,9 +43,9 @@ export async function registerForChallenge(
   if (process.env.RESEND_API_KEY) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     try {
-      await resend.emails.send({
+      const { data, error } = await resend.emails.send({
         from: 'VSB Challenge <onboarding@resend.dev>',
-        to: 'saibhaskar.as400@gmail.com',
+        to: ['saibhaskar.as400@gmail.com'],
         subject: 'New VSB Challenge Registration!',
         html: `
           <h1>New Registration!</h1>
@@ -57,6 +57,15 @@ export async function registerForChallenge(
           </ul>
         `,
       });
+
+      if (error) {
+        console.error('Resend API Error:', error);
+        return {
+          message: 'Registration successful, but failed to send notification email due to a Resend API error.',
+          success: true,
+        };
+      }
+
     } catch (error) {
       console.error('Failed to send registration email:', error);
       // We don't want to block the user registration if the email fails.
