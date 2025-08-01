@@ -72,6 +72,7 @@ export async function registerForChallenge(
     }
 
     // Send user confirmation email
+    /*
     try {
       console.log(`Attempting to send confirmation email for user ${email} to admin...`);
       const { data, error } = await resend.emails.send({
@@ -100,11 +101,13 @@ export async function registerForChallenge(
       console.log('User confirmation email sent successfully to admin inbox:', data);
     } catch (error) {
       console.error('Failed to send user confirmation email:', error);
+      
       return {
         message: 'Registration successful, but there was an issue sending the confirmation email. Please contact support.',
         success: true, 
       }
     }
+    */
   } else {
     console.warn('RESEND_API_KEY is not set. Skipping email notifications.');
   }
