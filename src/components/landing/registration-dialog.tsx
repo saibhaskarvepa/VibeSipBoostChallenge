@@ -62,18 +62,7 @@ export default function RegistrationDialog({ children }: RegistrationDialogProps
           <div className="flex flex-col items-center text-center p-8">
             <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
             <h2 className="text-2xl font-headline mb-2">Registration Successful!</h2>
-            <p className="text-muted-foreground mb-6">Welcome to the challenge! Here are your resources to get started.</p>
-            <div className="space-y-4 w-full">
-              <Button asChild className="w-full">
-                <a href="/placeholder-manual.pdf" download><Download className="mr-2 h-4 w-4" />Download Introduction Manual</a>
-              </Button>
-              <Button asChild className="w-full">
-                <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer"><LinkIcon className="mr-2 h-4 w-4" />Watch Introduction Video</a>
-              </Button>
-              <Button asChild className="w-full">
-                <a href="https://chat.whatsapp.com/12345" target="_blank" rel="noopener noreferrer"><LinkIcon className="mr-2 h-4 w-4" />Join WhatsApp Group</a>
-              </Button>
-            </div>
+            <p className="text-muted-foreground mb-6">Welcome to the VSB Challenge! Check your email for the next steps.</p>
              <DialogFooter className="mt-6">
                 <Button variant="outline" onClick={resetAndClose}>Close</Button>
             </DialogFooter>

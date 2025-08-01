@@ -8,7 +8,7 @@ export default function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
         <a href="/" className="flex items-center gap-2">
           <Logo className="h-6 w-6 text-primary" />
-          <span className="font-headline text-lg font-semibold">VibeSipBoost</span>
+          <span className="font-headline text-lg font-semibold">VSB Challenge</span>
         </a>
         <RegistrationDialog>
           <Button style={{ backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))' }}>

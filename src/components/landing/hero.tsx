@@ -22,7 +22,7 @@ export default function Hero() {
             Starts on August 15th, 2024
           </Badge>
           <h1 className="text-4xl font-headline tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-foreground">
-            Revitalize Your Vibe with the VibeSipBoost Challenge
+            Revitalize Your Vibe with the VSB Challenge
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Embark on a transformative journey to cleanse your body, boost your energy, and elevate your spirit. Join our guided juice fast challenge today!

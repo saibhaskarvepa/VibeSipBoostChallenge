@@ -16,7 +16,7 @@ export default function HowItWorks() {
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 mt-1 text-primary flex-shrink-0" />
               <span>
-                <strong>Register:</strong> Secure your spot and receive your Introduction Manual and video link instantly.
+                <strong>Register:</strong> Secure your spot and receive your joining instructions.
               </span>
             </li>
             <li className="flex items-start gap-4">
@@ -32,18 +32,6 @@ export default function HowItWorks() {
               </span>
             </li>
           </ul>
-          <Card className="mt-6 bg-primary/10 border-primary/20">
-            <CardHeader className="flex flex-row items-center gap-4 pb-2">
-              <BotMessageSquare className="w-8 h-8 text-primary" />
-              <CardTitle className="font-headline text-2xl">AI-Powered Reminders</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Stay motivated with our unique GenAI tool that crafts personalized reminder emails just for you, keeping you informed and inspired throughout the challenge. 
-                <Link href="/admin/personalize-email" className="text-primary underline ml-1">See how it works</Link>.
-              </p>
-            </CardContent>
-          </Card>
         </div>
         <div className="flex items-center justify-center">
             <Image

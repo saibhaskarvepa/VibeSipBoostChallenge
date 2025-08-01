@@ -1,21 +1,21 @@
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { FileText, Video, MessagesSquare } from 'lucide-react';
+import { FileText, Video, MessagesSquare, Smile } from 'lucide-react';
 
 const includedItems = [
   {
     icon: <FileText className="w-8 h-8 text-primary" />,
-    title: 'Introduction Manual',
+    title: 'Instruction Manual',
     description: 'A comprehensive guide to get you started, including recipes, tips, and a detailed schedule.',
   },
   {
     icon: <Video className="w-8 h-8 text-primary" />,
-    title: 'Exclusive Video Link',
-    description: 'Access to an introductory video that walks you through the entire process and what to expect.',
+    title: 'Exclusive Videos',
+    description: 'Access to introductory videos that walks you through the entire process and what to expect.',
   },
   {
-    icon: <MessagesSquare className="w-8 h-8 text-primary" />,
-    title: 'WhatsApp Group',
-    description: 'Join our private WhatsApp community for daily support, motivation, and to connect with fellow participants.',
+    icon: <Smile className="w-8 h-8 text-primary" />,
+    title: 'Community Support',
+    description: 'Get support, motivation, and connect with fellow participants in our community.',
   },
 ];
 

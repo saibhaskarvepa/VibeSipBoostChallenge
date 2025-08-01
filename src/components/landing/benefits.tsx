@@ -33,7 +33,7 @@ export default function Benefits() {
           <div className="space-y-2">
             <h2 className="text-3xl font-headline sm:text-4xl md:text-5xl">Unlock a Healthier You</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl lg:text-base xl:text-xl">
-              Discover the transformative benefits of our VibeSipBoost Challenge.
+              Discover the transformative benefits of our VSB Challenge.
             </p>
           </div>
         </div>

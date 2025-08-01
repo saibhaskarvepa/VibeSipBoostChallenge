@@ -8,7 +8,7 @@ export default function Cta() {
         <div className="flex flex-col items-center space-y-6 text-center">
           <h2 className="text-3xl font-headline tracking-tighter sm:text-4xl md:text-5xl">Ready to Transform Your Life?</h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-            Don't wait to start your journey towards better health and vitality. Secure your spot in the VibeSipBoost Challenge now!
+            Don't wait to start your journey towards better health and vitality. Secure your spot in the VSB Challenge now!
           </p>
           <div className="w-full max-w-sm space-y-2">
             <RegistrationDialog>

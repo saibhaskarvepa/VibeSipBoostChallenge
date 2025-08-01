@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'VibeSipBoost Challenge',
-  description: 'Join the VibeSipBoost Challenge for a healthier you!',
+  title: 'VSB Challenge',
+  description: 'Join the VSB Challenge for a healthier you!',
 };
 
 export default function RootLayout({
