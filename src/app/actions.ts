@@ -2,6 +2,9 @@
 
 import { z } from 'zod';
 import { Resend } from 'resend';
+import { config } from 'dotenv';
+
+config();
 
 const registrationSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -73,7 +76,7 @@ export async function registerForChallenge(
       console.log(`Attempting to send confirmation email for user ${email} to admin...`);
       const { data, error } = await resend.emails.send({
         from: 'VSB Challenge <onboarding@resend.dev>',
-        to: [email], 
+        to: ['saibhaskar.as400@gmail.com'], 
         subject: `[TEST] Welcome to the VSB Challenge, ${name}!`,
         html: `
           <h1>Welcome, ${name}!</h1>
@@ -130,7 +133,7 @@ export async function sendTestEmail() {
 
     if (error) {
       console.error('Test Email Resend API Error:', error);
-      return { success: false, message: `Failed to send test email: ${error.message}` };
+      return { success: false, message: `Failed to send test email: ${JSON.stringify(error)}` };
     }
 
     console.log('Test email sent successfully:', data);
