@@ -72,7 +72,7 @@ export default function RegistrationDialog({ children }: RegistrationDialogProps
             <DialogHeader>
               <DialogTitle className="font-headline text-3xl text-center">Join the Challenge</DialogTitle>
               <DialogDescription className="text-center">
-                Fill in your details below to secure your spot for just 25RM.
+                Fill in your details below to secure your spot.
               </DialogDescription>
             </DialogHeader>
             <form key={formKey} action={dispatch} className="space-y-4 py-4">

@@ -22,7 +22,7 @@ export default function Hero() {
             Starts on August 15th, 2024
           </Badge>
           <h1 className="text-4xl font-headline tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-foreground">
-            Revitalize Your Vibe with the VSB Challenge
+            Revitalize Your Vibe with the Vibe Sip Boost Challenge
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Embark on a transformative journey to cleanse your body, boost your energy, and elevate your spirit. Join our guided juice fast challenge today!
@@ -30,7 +30,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <RegistrationDialog>
               <Button size="lg" style={{ backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))' }} className="shadow-lg hover:shadow-xl transition-shadow">
-                Join for 25RM
+                Join the Challenge
               </Button>
             </RegistrationDialog>
             <a href="#benefits">
@@ -38,7 +38,7 @@ export default function Hero() {
             </a>
           </div>
           <p className="text-sm font-semibold text-primary">
-            Hurry! Only 17 seats left for this cohort!
+            Hurry! limited seats left for this cohort!
           </p>
         </div>
       </div>

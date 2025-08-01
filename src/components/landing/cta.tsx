@@ -13,7 +13,7 @@ export default function Cta() {
           <div className="w-full max-w-sm space-y-2">
             <RegistrationDialog>
               <Button type="submit" size="lg" className="w-full" style={{ backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))' }}>
-                Join for 25RM Today
+                Join the Challenge
               </Button>
             </RegistrationDialog>
             <p className="text-xs text-muted-foreground">Limited spots available. Register now to avoid disappointment.</p>

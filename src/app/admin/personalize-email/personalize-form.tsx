@@ -30,7 +30,7 @@ export function PersonalizeForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       userName: 'Alex Doe',
-      challengeName: 'VSB Challenge 7-Day Challenge',
+      challengeName: 'VSB Challenge',
       challengeStartDate: 'August 15th, 2024',
       userProgress: 'Day 3 of 7',
       motivationalMessage: 'Keep going, you are doing great!',
