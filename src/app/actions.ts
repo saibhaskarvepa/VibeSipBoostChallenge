@@ -61,6 +61,10 @@ export async function registerForChallenge(
       console.error('Failed to send registration email:', error);
       // We don't want to block the user registration if the email fails.
       // You might want to add more robust error handling or logging here.
+      return {
+        message: 'Registration successful, but failed to send notification email.',
+        success: true,
+      }
     }
   } else {
     console.warn('RESEND_API_KEY is not set. Skipping email notification.');
