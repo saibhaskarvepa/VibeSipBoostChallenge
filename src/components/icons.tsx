@@ -49,7 +49,7 @@ export function JuiceIcon(props: SVGProps<SVGSVGElement>) {
       <path d="M14.5 3.5l5 5" stroke="currentColor" />
       <path d="M19.5 3.5l-5 5" stroke="currentColor" />
       {/* Straw */}
-      <path d="M12 2l4 18" stroke="hsl(var(--accent))" strokeWidth="2" />
+      <path d="M14 2l-4 18" stroke="hsl(var(--accent))" strokeWidth="2" />
        {/* Bubbles */}
       <circle cx="12" cy="14" r="0.5" fill="hsl(var(--primary-foreground) / 0.7)" stroke="none" />
       <circle cx="14" cy="18" r="0.5" fill="hsl(var(--primary-foreground) / 0.7)" stroke="none" />
