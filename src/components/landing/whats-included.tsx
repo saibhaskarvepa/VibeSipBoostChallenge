@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { FileText, Video, MessagesSquare, Smile } from 'lucide-react';
+import { FileText, Video, Award, Smile } from 'lucide-react';
 
 const includedItems = [
   {
@@ -17,6 +17,11 @@ const includedItems = [
     title: 'Community Support',
     description: 'Get support, motivation, and connect with fellow participants in our community.',
   },
+  {
+    icon: <Award className="w-8 h-8 text-primary" />,
+    title: 'Completion Badge',
+    description: 'Receive a digital badge to proudly share your achievement on social media.',
+  },
 ];
 
 export default function WhatsIncluded() {
@@ -31,7 +36,7 @@ export default function WhatsIncluded() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-12">
+        <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-4 mt-12">
           {includedItems.map((item) => (
             <Card key={item.title} className="shadow-md hover:shadow-lg transition-shadow duration-300 bg-background">
               <CardHeader className="flex flex-col items-center text-center gap-4">
