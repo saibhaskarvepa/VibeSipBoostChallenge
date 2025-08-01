@@ -1,13 +1,20 @@
 import RegistrationDialog from './registration-dialog';
 import { Button } from '@/components/ui/button';
-import { JuiceIcon } from '@/components/icons';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
     <section id="home" className="w-full py-20 md:py-32 lg:py-40 bg-background">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-8 text-center">
-          <JuiceIcon className="w-24 h-24 text-primary" />
+          <Image
+            src="https://placehold.co/250x250.png"
+            alt="Vibe Sip Boost Juice"
+            data-ai-hint="juice glass fruits"
+            width={250}
+            height={250}
+            className="rounded-full shadow-lg"
+          />
           <h1 className="text-5xl font-headline tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl text-foreground">
             Vibe Sip Boost
           </h1>
