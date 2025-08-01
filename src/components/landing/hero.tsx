@@ -12,7 +12,6 @@ export default function Hero() {
           <Image
             src="/images/drink.png"
             alt="Vibe Sip Boost Juice"
-            data-ai-hint="juice glass fruits"
             width={250}
             height={250}
             className="rounded-full shadow-lg"
