@@ -38,7 +38,8 @@ export default function WhatsIncluded() {
         </div>
         <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-4 mt-12">
           {includedItems.map((item) => (
-            <Card key={item.title} className="shadow-md hover:shadow-lg transition-shadow duration-300 bg-background">
+            //<Card key={item.title} className="shadow-md hover:shadow-lg transition-shadow duration-300 bg-background">
+              <Card key={item.title} className="h-full flex flex-col shadow-md hover:shadow-lg transition-shadow duration-300 bg-background">
               <CardHeader className="flex flex-col items-center text-center gap-4">
               <Card key={item.title} className="h-full flex flex-col shadow-md hover:shadow-lg transition-shadow duration-300 bg-background"></Card>
                 <div className="rounded-full bg-primary/10 p-4">
