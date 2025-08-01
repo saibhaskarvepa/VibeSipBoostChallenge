@@ -10,8 +10,9 @@ export default function Hero() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-8 text-center">
           <Image
-            src="/images/drink.png"
+            src="https://placehold.co/250x250.png"
             alt="Vibe Sip Boost Juice"
+            data-ai-hint="juice glass fruits"
             width={250}
             height={250}
             className="rounded-full shadow-lg"
