@@ -7,7 +7,7 @@ export default function JuiceFastInfo() {
       <div className="container grid items-center gap-12 px-4 md:px-6 lg:grid-cols-2 lg:gap-20">
         <div className="flex items-center justify-center">
           <Image
-            src="https://placehold.co/600x600.png"
+            src="/images/juice.png"
             alt="Colorful juices in bottles"
             data-ai-hint="colorful fresh juices"
             width={600}

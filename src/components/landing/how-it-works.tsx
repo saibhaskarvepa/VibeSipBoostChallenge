@@ -35,7 +35,7 @@ export default function HowItWorks() {
         </div>
         <div className="flex items-center justify-center">
             <Image
-              src="https://placehold.co/600x600.png"
+              src="/images/yoga.png"
               alt="Woman smiling with juice"
               data-ai-hint="woman healthy smoothie"
               width={600}
