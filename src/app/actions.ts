@@ -42,9 +42,10 @@ export async function registerForChallenge(
   if (process.env.RESEND_API_KEY) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     
+    // Send admin notification
     try {
-      // Send admin notification
-      await resend.emails.send({
+      console.log('Attempting to send admin notification email...');
+      const { data, error } = await resend.emails.send({
         from: 'VSB Challenge <onboarding@resend.dev>',
         to: ['saibhaskar.as400@gmail.com'],
         subject: 'New VSB Challenge Registration!',
@@ -58,9 +59,19 @@ export async function registerForChallenge(
           </ul>
         `,
       });
+       if (error) {
+        console.error('Admin Email Resend API Error:', error);
+      } else {
+        console.log('Admin notification email sent successfully:', data);
+      }
+    } catch (error) {
+      console.error('Failed to send admin notification email:', error);
+    }
 
-      // Send user confirmation email
-      await resend.emails.send({
+    // Send user confirmation email
+    try {
+      console.log(`Attempting to send confirmation email to ${email}...`);
+      const { data, error } = await resend.emails.send({
         from: 'VSB Challenge <onboarding@resend.dev>',
         to: [email],
         subject: 'Welcome to the VSB Challenge!',
@@ -74,14 +85,19 @@ export async function registerForChallenge(
           <p>The VSB Challenge Team</p>
         `,
       });
-
+      if (error) {
+        console.error('User Confirmation Email Resend API Error:', error);
+        return {
+          message: 'Registration successful, but we failed to send your confirmation email. Please contact support.',
+          success: true,
+        }
+      }
+      console.log('User confirmation email sent successfully:', data);
     } catch (error) {
-      console.error('Failed to send registration email:', error);
-      // We don't want to block the user registration if the email fails,
-      // but we return a message indicating the email part failed.
+      console.error('Failed to send user confirmation email:', error);
       return {
-        message: 'Registration successful, but we failed to send the confirmation email. Please contact support.',
-        success: true, // The user is registered, but we need to flag the email issue.
+        message: 'Registration successful, but there was an issue sending your confirmation email. Please contact support.',
+        success: true, 
       }
     }
   } else {
