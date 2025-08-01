@@ -4,23 +4,24 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah L.",
+    name: "Sarah",
     avatar: "SL",
-    image: "https://placehold.co/100x100.png",
+    //image: "https://placehold.co/100x100.png",
+    image: "/images/women.png",
     text: "The VSB Challenge was a game-changer! I felt so energized and light afterwards. The recipes were delicious and the community support was fantastic. Highly recommend!",
     rating: 5,
   },
   {
-    name: "John D.",
+    name: "Girr",
     avatar: "JD",
-    image: "https://placehold.co/100x100.png",
+    image: "/images/women.png",
     text: "I was skeptical at first, but this challenge exceeded all my expectations. I lost weight, my skin cleared up, and I have so much more mental clarity. I can't wait for the next one!",
     rating: 5,
   },
   {
-    name: "Aisha B.",
+    name: "Darren",
     avatar: "AB",
-    image: "https://placehold.co/100x100.png",
+    image: "/images/men.png",
     text: "A truly revitalizing experience. The daily guidance helped me stay on track. It's amazing how much better I feel in just a short time. Thank you, VSB team!",
     rating: 5,
   },
