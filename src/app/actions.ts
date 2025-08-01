@@ -1,6 +1,7 @@
 'use server';
 
 import { z } from 'zod';
+import { Resend } from 'resend';
 
 const registrationSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -40,6 +41,33 @@ export async function registerForChallenge(
   // save the user to a database, and send a confirmation email.
   // For this demonstration, we will just log the data and simulate success.
   console.log('New Challenge Registration:', validatedFields.data);
+
+  // Send email notification
+  if (process.env.RESEND_API_KEY) {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    try {
+      await resend.emails.send({
+        from: 'VSB Challenge <onboarding@resend.dev>',
+        to: 'saibhaskar.as400@gmail.com',
+        subject: 'New VSB Challenge Registration!',
+        html: `
+          <h1>New Registration!</h1>
+          <p>A new user has registered for the VSB Challenge.</p>
+          <ul>
+            <li><strong>Name:</strong> ${validatedFields.data.name}</li>
+            <li><strong>Email:</strong> ${validatedFields.data.email}</li>
+            <li><strong>WhatsApp:</strong> ${validatedFields.data.whatsapp}</li>
+          </ul>
+        `,
+      });
+    } catch (error) {
+      console.error('Failed to send registration email:', error);
+      // We don't want to block the user registration if the email fails.
+      // You might want to add more robust error handling or logging here.
+    }
+  } else {
+    console.warn('RESEND_API_KEY is not set. Skipping email notification.');
+  }
 
   return {
     message: 'Registration successful!',
