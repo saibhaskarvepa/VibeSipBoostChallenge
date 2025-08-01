@@ -25,38 +25,66 @@ export function JuiceIconOld(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+
+
 export function JuiceIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      width="128"
+      height="128"
       {...props}
     >
-      {/* Glass */}
-      <path d="M8 3h8l-1 18H9L8 3z" stroke="currentColor" fill="hsl(var(--primary-foreground) / 0.5)" />
-      {/* Juice */}
-      <path d="M9 8h6l-.5 12H9.5L9 8z" fill="hsl(var(--primary))" stroke="none" />
-      {/* Orange Slice */}
-      <circle cx="17" cy="6" r="4" fill="hsl(var(--primary))" stroke="currentColor" />
-      <path d="M17 2v8" stroke="currentColor" />
-      <path d="M14.5 3.5l5 5" stroke="currentColor" />
-      <path d="M19.5 3.5l-5 5" stroke="currentColor" />
-      {/* Straw */}
-      <path d="M14 2l-4 18" stroke="hsl(var(--accent))" strokeWidth="2" />
-       {/* Bubbles */}
-      <circle cx="12" cy="14" r="0.5" fill="hsl(var(--primary-foreground) / 0.7)" stroke="none" />
-      <circle cx="14" cy="18" r="0.5" fill="hsl(var(--primary-foreground) / 0.7)" stroke="none" />
-      <circle cx="11" cy="19" r="0.5" fill="hsl(var(--primary-foreground) / 0.7)" stroke="none" />
+      <g transform="translate(0, -1028.3622)">
+        <path
+          d="m 7.9999999,1031.3622 0,2 -2,0 0,2 2,0 0,2 2,0 0,-2 2,0 0,-2 -2,0 0,-2 -2,0 z"
+          fill="#4cd137"
+        />
+        <path
+          d="m 5,1041.3622 c -1,0 -1,1 -1,1 l 0,5 c 0,0 0,1 1,1 l 5,0 c 1,0 1,-1 1,-1 l 0,-5 c 0,0 0,-1 -1,-1 l -5,0 z m 0.5,1.5 4,0 0,4 -4,0 0,-4 z"
+          fill="#e84118"
+        />
+        <path
+          d="m 8,1037.3622 8,0 0,16 -8,0 z"
+          fill="#74b9ff"
+          transform="matrix(1.25,0,0,1,-2,0)"
+        />
+        <path
+          d="m 8,1042.3622 10,0 0,11 -10,0 z"
+          fill="#fbc531"
+        />
+        <path
+          d="m 16,1047.3622 c -1.1046,0 -2,0.8954 -2,2 0,1.1046 0.8954,2 2,2 1.1046,0 2,-0.8954 2,-2 0,-1.1046 -0.8954,-2 -2,-2 z m -4,1 c -0.5523,0 -1,0.4477 -1,1 0,0.5523 0.4477,1 1,1 0.5523,0 1,-0.4477 1,-1 0,-0.5523 -0.4477,-1 -1,-1 z m -1,3 c -0.5523,0 -1,0.4477 -1,1 0,0.5523 0.4477,1 1,1 0.5523,0 1,-0.4477 1,-1 0,-0.5523 -0.4477,-1 -1,-1 z"
+          fill="#e1b12c"
+        />
+        <path
+          d="m 14.5,1033.3622 -8,18 1,0.5 8,-18 z"
+          fill="#e84118"
+        />
+        <path
+          d="m 4,1038.3622 c -0.25,0.25 -0.25,0.75 -0.25,1.75 0,1 -0.25,1.75 0,2 0.25,0.25 0.5,0.25 0.75,0.25 0.25,0 0.5,-0.25 0.75,-0.5 0.25,-0.25 0.5,-0.75 0.5,-1.25 0,-0.5 0,-1.25 -0.25,-1.75 -0.25,-0.5 -0.5,-0.5 -1,-0.5 -0.25,0 -0.5,0 -0.75,0.25 z"
+          fill="#ff4757"
+        />
+        <path
+          d="m 7,1035.3622 c -1.5,0 -1.9,1.5 -2,2 -0.1,0.5 -0.1,1.5 0.5,2.5 0.6,1 1.5,1.5 2.5,1.5 1,0 2,-0.5 2.5,-1.5 0.5,-1 0.5,-2 0,-2.5 -0.5,-1 -1,-2 -3.5,-2 z"
+          fill="#ff4757"
+        />
+        <path d="m 7,1035.3622 c -0.25,0 -0.5,0.25 -0.5,0.25 0,0 0.25,-0.25 0.5,-0.25 z" fill="#ff7f50"/>
+        <path
+          d="m 18,1043.3622 0,9 c 2.5,0 2.5,-2.25 2.5,-4.5 0,-2.25 0,-4.5 -2.5,-4.5 z"
+          fill="#ffd32a"
+        />
+        <path
+          d="m 18,1043.3622 c 2.5,0 2.5,2.25 2.5,4.5 0,0.75 0,1.5 -0.125,2.25 -0.125,0.75 -0.375,1.5 -0.875,2.25 l 0.5,0.5 c 0.5,-0.75 0.875,-1.625 1,-2.5 0.125,-0.875 0.125,-1.875 0.125,-2.875 0,-2.25 0,-4.5 -2.625,-4.5 l -0.5,0 z"
+          fill="#e1b12c"
+        />
+        <path d="m 18,1047.8622 2.5,0" stroke="#e1b12c" stroke-linecap="round"/>
+      </g>
     </svg>
   );
 }
+
 
 export function Logo(props: SVGProps<SVGSVGElement>) {
   return (
