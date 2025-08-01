@@ -73,7 +73,7 @@ export async function registerForChallenge(
       console.log(`Attempting to send confirmation email for user ${email} to admin...`);
       const { data, error } = await resend.emails.send({
         from: 'VSB Challenge <onboarding@resend.dev>',
-        to: ['saibhaskar.as400@gmail.com'], // Sending to admin for debugging
+        to: [email], 
         subject: `[TEST] Welcome to the VSB Challenge, ${name}!`,
         html: `
           <h1>Welcome, ${name}!</h1>
