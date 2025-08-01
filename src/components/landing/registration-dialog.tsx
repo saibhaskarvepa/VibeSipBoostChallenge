@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import React, { useEffect, useState, useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import {
   Dialog,
   DialogContent,
@@ -37,7 +37,7 @@ export default function RegistrationDialog({ children }: RegistrationDialogProps
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
   const initialState: RegistrationState = { message: '', errors: {}, success: false };
-  const [state, dispatch] = useFormState(registerForChallenge, initialState);
+  const [state, dispatch] = useActionState(registerForChallenge, initialState);
   const [formKey, setFormKey] = useState(Date.now());
 
   useEffect(() => {
