@@ -70,11 +70,11 @@ export async function registerForChallenge(
 
     // Send user confirmation email
     try {
-      console.log(`Attempting to send confirmation email to ${email}...`);
+      console.log(`Attempting to send confirmation email for user ${email} to admin...`);
       const { data, error } = await resend.emails.send({
         from: 'VSB Challenge <onboarding@resend.dev>',
-        to: [email],
-        subject: 'Welcome to the VSB Challenge!',
+        to: ['saibhaskar.as400@gmail.com'], // Sending to admin for debugging
+        subject: `[TEST] Welcome to the VSB Challenge, ${name}!`,
         html: `
           <h1>Welcome, ${name}!</h1>
           <p>Thank you for registering for the VSB Challenge. We are so excited to have you on board!</p>
@@ -83,20 +83,22 @@ export async function registerForChallenge(
           <br/>
           <p>Best regards,</p>
           <p>The VSB Challenge Team</p>
+          <hr/>
+          <p><em>(This is a copy of the email intended for ${email})</em></p>
         `,
       });
       if (error) {
         console.error('User Confirmation Email Resend API Error:', error);
         return {
-          message: 'Registration successful, but we failed to send your confirmation email. Please contact support.',
+          message: 'Registration successful, but we failed to send the confirmation email. Please contact support.',
           success: true,
         }
       }
-      console.log('User confirmation email sent successfully:', data);
+      console.log('User confirmation email sent successfully to admin inbox:', data);
     } catch (error) {
       console.error('Failed to send user confirmation email:', error);
       return {
-        message: 'Registration successful, but there was an issue sending your confirmation email. Please contact support.',
+        message: 'Registration successful, but there was an issue sending the confirmation email. Please contact support.',
         success: true, 
       }
     }
