@@ -8,6 +8,7 @@ import Testimonials from '@/components/landing/testimonials';
 import Cta from '@/components/landing/cta';
 import ComingSoon from '@/components/landing/coming-soon';
 import Footer from '@/components/landing/footer';
+import ChallengeDate from '@/components/landing/challenge-date';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <ChallengeDate />
         <WhatsIncluded />
         <Benefits />
         <JuiceFastInfo />
