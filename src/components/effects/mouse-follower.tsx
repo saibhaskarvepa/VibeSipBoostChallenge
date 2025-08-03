@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 interface Point {
@@ -10,6 +10,7 @@ interface Point {
 
 export default function MouseFollower() {
   const [points, setPoints] = useState<Point[]>([]);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -19,13 +20,27 @@ export default function MouseFollower() {
     }
 
     const handleMouseMove = (e: MouseEvent) => {
+      // Clear the timeout if the mouse is moving
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+
       setPoints(prevPoints => [{ x: e.clientX, y: e.clientY }, ...prevPoints].slice(0, 20));
+
+      // Set a timeout to clear the points when the mouse stops
+      timeoutRef.current = setTimeout(() => {
+        setPoints([]);
+      }, 200); // 200ms delay before clearing the trail
     };
 
     window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, [isMobile]);
   
