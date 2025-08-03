@@ -1,6 +1,10 @@
+'use client';
+
+import * as React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Leaf, Zap, HeartPulse, BrainCircuit } from 'lucide-react';
+import Autoplay from "embla-carousel-autoplay";
 
 const benefits = [
   {
@@ -26,6 +30,10 @@ const benefits = [
 ];
 
 export default function Benefits() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
   return (
     <section id="benefits" className="w-full py-12 md:py-24">
       <div className="container px-4 md:px-6">
@@ -38,11 +46,14 @@ export default function Benefits() {
           </div>
         </div>
         <Carousel
+          plugins={[plugin.current]}
           opts={{
             align: "start",
             loop: true,
           }}
           className="w-full max-w-4xl mx-auto"
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
         >
           <CarouselContent>
             {benefits.map((benefit, index) => (
